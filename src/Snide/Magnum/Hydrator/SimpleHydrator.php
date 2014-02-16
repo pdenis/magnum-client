@@ -12,7 +12,7 @@ class SimpleHydrator
     /**
      * Hydrate object from data array using object setter methods
      *
-     * @param $object Object to hydrate
+     * @param  mixed $object Object to hydrate
      * @param  array $data Data
      * @return mixed
      */
@@ -35,21 +35,20 @@ class SimpleHydrator
      * Transform "_" var to camelCase
      *
      * @param string $key Key to transform
-     *
      * @return string The new key
      */
     public function toCamelCase($key)
     {
         $regexp = '#_(.)#e';
-        return preg_replace($regexp, "strtoupper('\\1')", $key);
+        return preg_replace($regexp, strtoupper('\\1'), $key);
     }
 
     /**
      * Call object set method for a key and pass value
      *
-     * @param $object An object
-     * @param $key A key (setKey)
-     * @param $value A value (setKey(value))
+     * @param mixed $object An object
+     * @param string $key A key (setKey)
+     * @param mixed $value A value (setKey(value))
      * @return bool IF set method exist
      */
     public function callSetter(&$object, $key, $value)
