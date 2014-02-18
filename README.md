@@ -1,5 +1,5 @@
-Magnum CI PHP Client
-====================
+Magnum CI API PHP Client
+========================
 
 [![Build Status](https://travis-ci.org/pdenis/magnum-client.png)](https://travis-ci.org/pdenis/magnum-client)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/pdenis/magnum-client/badges/quality-score.png?s=0acc7f80fee88ce4e8615597729ab3fd1f0cb878)](https://scrutinizer-ci.com/g/pdenis/magnum-client/)
@@ -9,7 +9,7 @@ Magnum CI PHP Client
 
 ### Installation by Composer
 
-If you use composer, add MonitorBundle bundle as a dependency to the composer.json of your application
+If you use composer, add php-magnum-client library as a dependency to the composer.json of your application
 
 ```php
     "require": {
