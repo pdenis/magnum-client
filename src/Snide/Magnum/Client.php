@@ -46,7 +46,7 @@ class Client
     {
         if (!$hydrator) {
             $this->hydrator = new Hydrator\SimpleHydrator();
-        }else {
+        } else {
             $this->hydrator = $hydrator;
         }
     }

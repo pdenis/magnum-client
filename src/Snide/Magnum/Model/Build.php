@@ -189,7 +189,7 @@ class Build
     {
         if (!is_object($createdAt)) {
             $this->createdAt = new \DateTime($createdAt);
-        }else {
+        } else {
             $this->createdAt = $createdAt;
         }
     }
@@ -209,7 +209,7 @@ class Build
     {
         if (!is_object($finishedAt)) {
             $this->finishedAt = new \DateTime($finishedAt);
-        }else {
+        } else {
             $this->finishedAt = $finishedAt;
         }
     }
@@ -309,7 +309,7 @@ class Build
     {
         if (!is_object($startedAt)) {
             $this->startedAt = new \DateTime($startedAt);
-        }else {
+        } else {
             $this->startedAt = $startedAt;
         }
     }
@@ -345,7 +345,7 @@ class Build
     {
         if (!is_object($updatedAt)) {
             $this->updatedAt = new \DateTime($updatedAt);
-        }else {
+        } else {
             $this->updatedAt = $updatedAt;
         }
     }

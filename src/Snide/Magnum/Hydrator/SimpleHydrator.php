@@ -51,7 +51,11 @@ class SimpleHydrator
         $regexp = '#_(.)#';
         return preg_replace_callback(
             $regexp,
-            create_function ('$matches', 'return strtoupper($matches[1]);'), $key
+            create_function(
+                '$matches',
+                'return strtoupper($matches[1]);'
+            ),
+            $key
         );
     }
 

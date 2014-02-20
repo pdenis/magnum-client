@@ -146,7 +146,7 @@ class Project
     {
         if (!is_object($lastBuildAt)) {
             $this->lastBuildAt = new \DateTime($lastBuildAt);
-        }else {
+        } else {
             $this->lastBuildAt = $lastBuildAt;
         }
     }
@@ -230,7 +230,7 @@ class Project
     {
         if (!is_object($createdAt)) {
             $this->createdAt = new \DateTime($createdAt);
-        }else {
+        } else {
             $this->createdAt = $createdAt;
         }
     }
@@ -346,7 +346,7 @@ class Project
     {
         if (!is_object($updatedAt)) {
             $this->updatedAt = new \DateTime($updatedAt);
-        }else {
+        } else {
             $this->updatedAt = $updatedAt;
         }
     }

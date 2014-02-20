@@ -99,7 +99,7 @@ class User
     {
         if (!is_object($createdAt)) {
             $this->createdAt = new \DateTime($createdAt);
-        }else {
+        } else {
            $this->createdAt = $createdAt;
         }
     }
