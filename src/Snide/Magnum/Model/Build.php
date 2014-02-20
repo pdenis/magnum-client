@@ -187,7 +187,7 @@ class Build
      */
     public function setCreatedAt($createdAt)
     {
-        if(!is_object($createdAt)) {
+        if (!is_object($createdAt)) {
             $this->createdAt = new \DateTime($createdAt);
         }else {
             $this->createdAt = $createdAt;
@@ -207,7 +207,7 @@ class Build
      */
     public function setFinishedAt($finishedAt)
     {
-        if(!is_object($finishedAt)) {
+        if (!is_object($finishedAt)) {
             $this->finishedAt = new \DateTime($finishedAt);
         }else {
             $this->finishedAt = $finishedAt;
@@ -307,7 +307,7 @@ class Build
      */
     public function setStartedAt($startedAt)
     {
-        if(!is_object($startedAt)) {
+        if (!is_object($startedAt)) {
             $this->startedAt = new \DateTime($startedAt);
         }else {
             $this->startedAt = $startedAt;
@@ -343,7 +343,7 @@ class Build
      */
     public function setUpdatedAt($updatedAt)
     {
-        if(!is_object($updatedAt)) {
+        if (!is_object($updatedAt)) {
             $this->updatedAt = new \DateTime($updatedAt);
         }else {
             $this->updatedAt = $updatedAt;

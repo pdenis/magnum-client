@@ -44,7 +44,7 @@ class Client
      */
     public function __construct(SimpleHydrator $hydrator = null)
     {
-        if(!$hydrator) {
+        if (!$hydrator) {
             $this->hydrator = new Hydrator\SimpleHydrator();
         }else {
             $this->hydrator = $hydrator;
@@ -64,7 +64,7 @@ class Client
         // Hydrate response into project
         $project = $this->hydrate($project, $response);
 
-        if(!$withBuild) {
+        if (!$withBuild) {
             return $project;
         }
         // Load project builds
@@ -80,9 +80,9 @@ class Client
     public function fetchBuilds(Project $project)
     {
         $response = $this->getResponse('/api/v1/project/builds', array('token' => $project->getApiToken()));
-        if(is_array($response)) {
+        if (is_array($response)) {
             // Load project builds
-            foreach($response as $buildData) {
+            foreach ($response as $buildData) {
                 $build = new Build();
                 // Add build to project instance
                 $project->addBuild($this->hydrate($build, $buildData));
@@ -125,7 +125,7 @@ class Client
     /**
      * Hydrate object with data
      *
-     * @param mised $object An object
+     * @param mixed $object An object
      * @param array $data data to inject
      * @return mixed
      */

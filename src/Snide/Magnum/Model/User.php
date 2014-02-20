@@ -97,7 +97,7 @@ class User
      */
     public function setCreatedAt($createdAt)
     {
-        if(!is_object($createdAt)) {
+        if (!is_object($createdAt)) {
             $this->createdAt = new \DateTime($createdAt);
         }else {
            $this->createdAt = $createdAt;

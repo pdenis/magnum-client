@@ -144,7 +144,7 @@ class Project
      */
     public function setLastBuildAt($lastBuildAt)
     {
-        if(!is_object($lastBuildAt)) {
+        if (!is_object($lastBuildAt)) {
             $this->lastBuildAt = new \DateTime($lastBuildAt);
         }else {
             $this->lastBuildAt = $lastBuildAt;
@@ -228,7 +228,7 @@ class Project
      */
     public function setCreatedAt($createdAt)
     {
-        if(!is_object($createdAt)) {
+        if (!is_object($createdAt)) {
             $this->createdAt = new \DateTime($createdAt);
         }else {
             $this->createdAt = $createdAt;
@@ -344,7 +344,7 @@ class Project
      */
     public function setUpdatedAt($updatedAt)
     {
-        if(!is_object($updatedAt)) {
+        if (!is_object($updatedAt)) {
             $this->updatedAt = new \DateTime($updatedAt);
         }else {
             $this->updatedAt = $updatedAt;
@@ -378,7 +378,7 @@ class Project
      */
     public function removeBuild(Build $build)
     {
-        if(isset($this->builds[$build->getId()])) {
+        if (isset($this->builds[$build->getId()])) {
             unset($this->builds[$build->getId()]);
         }
     }
@@ -390,7 +390,7 @@ class Project
      */
     public function getBuilds()
     {
-        if(!is_array($this->builds)) {
+        if (!is_array($this->builds)) {
             $this->builds = array();
         }
 
