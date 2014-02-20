@@ -25,7 +25,7 @@ If you use composer, add php-magnum-client library as a dependency to the compos
 
 ## Usage
 
-### To get Project info, you can do :
+### Getting Project info :
 
 ```php
 <?php
@@ -40,10 +40,11 @@ $client = new Client();
 $project = new Project();
 $project->setApiToken('YourProjectAPIKey');
 $project = $client->fetchProject($project); // Fetch project & builds
+$project = $client->fetchProject($project, false); // Fetch project without builds
 
 ```
 
-### To get User  info, you can do :
+### Getting User info :
 
 ```php
 <?php
