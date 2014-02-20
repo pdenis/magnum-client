@@ -65,6 +65,21 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test lastBuildAt
+     */
+    public function testLastBuildAt()
+    {
+        $this->assertNull($this->object->getLastBuildAt());
+        $date = '2014-02-15T04:36:59-06:00';
+        $updatedAt = new \DateTime($date);
+
+        $this->object->setLastBuildAt($date);
+        $this->assertEquals($updatedAt, $this->object->getLastBuildAt());
+        $this->object->setLastBuildAt($updatedAt);
+        $this->assertEquals($updatedAt, $this->object->getLastBuildAt());
+    }
+
+    /**
      * Test API token
      */
     public function testApiToken()
@@ -98,6 +113,28 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test provider
+     */
+    public function testProvider()
+    {
+        $this->assertNull($this->object->getProvider());
+        $provider = 'git';
+        $this->object->setProvider($provider);
+        $this->assertEquals($provider, $this->object->getProvider());
+    }
+
+    /**
+     * Test project type
+     */
+    public function testProjectType()
+    {
+        $this->assertNull($this->object->getProjectType());
+        $projectType = 'php';
+        $this->object->setProjectType($projectType);
+        $this->assertEquals($projectType, $this->object->getProjectType());
+    }
+
+    /**
      * Test source type
      */
     public function testSourceUrl()
@@ -128,6 +165,17 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
         $count = 12;
         $this->object->setBuildsCount($count);
         $this->assertEquals($count, $this->object->getBuildsCount());
+    }
+
+    /**
+     * Test failed builds count
+     */
+    public function testFailedBuildsCount()
+    {
+        $this->assertNull($this->object->getFailedBuildsCount());
+        $count = 12;
+        $this->object->setFailedBuildsCount($count);
+        $this->assertEquals($count, $this->object->getFailedBuildsCount());
     }
 
     /**

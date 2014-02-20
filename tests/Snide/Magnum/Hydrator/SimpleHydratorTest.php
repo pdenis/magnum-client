@@ -26,7 +26,7 @@ class SimpleHydratorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test hydrate object 
+     * Test hydrate object
      */
     public function testHydrate()
     {
