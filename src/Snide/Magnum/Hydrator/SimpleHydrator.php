@@ -39,8 +39,11 @@ class SimpleHydrator
      */
     public function toCamelCase($key)
     {
-        $regexp = '#_(.)#e';
-        return preg_replace($regexp, "strtoupper('\\1')", $key);
+        $regexp = '#_(.)#';
+        return preg_replace_callback(
+            $regexp,
+            create_function ('$matches', 'return strtoupper($matches[1]);'), $key
+        );
     }
 
     /**
