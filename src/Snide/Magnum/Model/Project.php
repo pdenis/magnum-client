@@ -87,6 +87,102 @@ class Project
     protected $apiToken;
 
     /**
+     * Versioning provider
+     *
+     * @var string
+     */
+    protected $provider;
+
+    /**
+     * Project language
+     *
+     * @var string
+     */
+    protected $projectType;
+
+    /**
+     * Failed builds count
+     *
+     * @var int
+     */
+    protected $failedBuildsCount;
+
+    /**
+     * Last build date
+     *
+     * @var \DateTime
+     */
+    protected $lastBuildAt;
+
+    /**
+     * @param int $failedBuildsCount
+     */
+    public function setFailedBuildsCount($failedBuildsCount)
+    {
+        $this->failedBuildsCount = $failedBuildsCount;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFailedBuildsCount()
+    {
+        return $this->failedBuildsCount;
+    }
+
+    /**
+     * @param \DateTime $lastBuildAt
+     */
+    public function setLastBuildAt($lastBuildAt)
+    {
+        if(!is_object($lastBuildAt)) {
+            $this->lastBuildAt = new \DateTime($lastBuildAt);
+        }else {
+            $this->lastBuildAt = $lastBuildAt;
+        }
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getLastBuildAt()
+    {
+        return $this->lastBuildAt;
+    }
+
+    /**
+     * @param string $projectType
+     */
+    public function setProjectType($projectType)
+    {
+        $this->projectType = $projectType;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProjectType()
+    {
+        return $this->projectType;
+    }
+
+    /**
+     * @param string $provider
+     */
+    public function setProvider($provider)
+    {
+        $this->provider = $provider;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProvider()
+    {
+        return $this->provider;
+    }
+
+    /**
      * @param string $apiToken
      */
     public function setApiToken($apiToken)

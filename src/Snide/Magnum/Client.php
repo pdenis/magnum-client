@@ -35,7 +35,7 @@ class Client
      */
     public function __construct(SimpleHydrator $hydrator = null)
     {
-        if(!$this->hydrator) {
+        if(!$hydrator) {
             $this->hydrator = new Hydrator\SimpleHydrator();
         }else {
             $this->hydrator = $hydrator;
@@ -52,12 +52,13 @@ class Client
     public function fetchProject(Project $project, $withBuild = true)
     {
         $response = $this->getResponse('/api/v1/project', array('token' => $project->getApiToken()));
-
+        // Hydrate response into project
         $project = $this->hydrate($project, $response);
+
         if(!$withBuild) {
             return $project;
         }
-
+        // Load project builds
         return $this->fetchBuilds($project);
     }
 
@@ -71,8 +72,10 @@ class Client
     {
         $response = $this->getResponse('/api/v1/project/builds', array('token' => $project->getApiToken()));
         if(is_array($response)) {
+            // Load project builds
             foreach($response as $buildData) {
                 $build = new Build();
+                // Add build to project instance
                 $project->addBuild($this->hydrate($build, $buildData));
             }
         }
