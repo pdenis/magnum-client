@@ -1,6 +1,8 @@
 Magnum CI API PHP Client
 ========================
 
+A simple PHP client for [Magnum CI API](https://magnum-ci.com/docs/api)
+
 [![Build Status](https://magnum-ci.com/status/588067ab677935266b318d6e7e6ff45f.png)](https://magnum-ci.com/public/8e6f82b13dc3c05f3e53/builds)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/pdenis/magnum-client/badges/quality-score.png?s=0acc7f80fee88ce4e8615597729ab3fd1f0cb878)](https://scrutinizer-ci.com/g/pdenis/magnum-client/)
 [![Code Coverage](https://scrutinizer-ci.com/g/pdenis/magnum-client/badges/coverage.png?s=2b29e1b22c6268f75d98c92a58f2ca34c6427613)](https://scrutinizer-ci.com/g/pdenis/magnum-client/)
