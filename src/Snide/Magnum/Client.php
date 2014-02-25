@@ -15,6 +15,8 @@ use Snide\Magnum\Model\Build;
 use Snide\Magnum\Model\User;
 use Snide\Magnum\Model\Project;
 use Snide\Magnum\Hydrator\SimpleHydrator;
+use Guzzle\Http\Client as GuzzleClient;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Class Client
@@ -38,6 +40,11 @@ class Client
     protected $hydrator;
 
     /**
+     * @var GuzzleClient
+     */
+    protected $httpClient;
+
+    /**
      * Constructor
      *
      * @param SimpleHydrator $hydrator
@@ -49,6 +56,11 @@ class Client
         } else {
             $this->hydrator = $hydrator;
         }
+
+        $this->httpClient = new GuzzleClient(
+            $this->endpoint,
+            array('ssl.certificate_authority' => false)
+        );
     }
 
     /**
@@ -106,6 +118,16 @@ class Client
     }
 
     /**
+     * Add Http client subscriber
+     *
+     * @param EventSubscriberInterface $subscriber
+     */
+    public function addSubscriber(EventSubscriberInterface $subscriber)
+    {
+        $this->httpClient->addSubscriber($subscriber);
+    }
+
+    /**
      * Get Response from API
      * Response is an array (Result of json_decode)
      *
@@ -115,9 +137,8 @@ class Client
      */
     protected function getResponse($uri, array $queryParams = array())
     {
-        $client = new \Guzzle\Http\Client($this->endpoint, array('ssl.certificate_authority' => false));
 
-        $request = $client->get($uri, array(), array('query' => $queryParams));
+        $request = $this->httpClient->get($uri, array(), array('query' => $queryParams));
 
         return $request->send()->json();
     }
@@ -134,3 +155,4 @@ class Client
         return $this->hydrator->hydrate($object, $data);
     }
 }
+
